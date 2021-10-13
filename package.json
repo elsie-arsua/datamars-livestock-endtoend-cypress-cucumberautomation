@@ -1,0 +1,25 @@
+{
+  "name": "activity-monitoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:test-open": "cypress open --env fileConfig=test",
+    "cy:test-run": "cypress run --env fileConfig=test",
+    "cy:prod-open": "cypress open --env fileConfig=production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^7.0.1",
+    "cypress-cucumber-preprocessor": "^4.1.4",
+    "cypress-mochawesome-reporter": "^2.2.0",
+    "cypress-tags": "0.0.21",
+    "cypress-wait-until": "^1.7.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+}

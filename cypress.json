@@ -1,0 +1,15 @@
+{
+    "testFiles": ["**/*.{feature,features}"],
+    "experimentalRunEvents": true,
+    "reporter": "cypress-mochawesome-reporter",
+    "reportedOptions": {
+        "reportDir": "cypress/reports",
+        "charts": true,
+        "reportPageTitle": "My Test Suite",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "quiet": true
+    },
+    "video": false,
+    "screenshotsFolder": "cypress/reports/screenshots"
+}
