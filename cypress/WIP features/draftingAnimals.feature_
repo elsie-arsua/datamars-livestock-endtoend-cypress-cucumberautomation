@@ -1,0 +1,76 @@
+Feature: Drafting Animals
+Animals in a farm will be inspected by the farmer for different reasons.
+In DML these reasons are: Heat, Health, Device, General.
+
+A. Farm has drafters
+   If drafters are set up for a farm, then drafting slots can be configured thru DML.
+   A farm can have up to 4 drafting slots.
+   Creating a drafting slot requires time of day and one or more of the above reasons.
+   This means that each day there can be up to 4 draftings.
+   A drafting slot can be added at any point in time.
+   A drafting slot can be edited (at any point in time?TBC).
+   A drafting slot can be deleted (at any point in time?TBC).
+   Only admins (regular admin or super admin) can add, edit, or delete a drafting slot.
+    # How does 
+   
+   A farm has an additional configuration to allow an animal into multiple drafting slots for insemination (only).
+   This is not allowed by default, and an admin can change it at any point in time?TBC. This should automatically
+   update the upcoming draft list if now multiple draft slots apply to an animal?TBC.
+   
+   DML auto generates a draft list of animals per drafting slot per date?TBC.
+   All users to a farm (admin, member, viewer) can view any draft list.
+   A draft list can be historical or future. By default, the next upcoming draft list is presented to the user.
+   An animal is added to a draft list according to the rules:
+    - Automated addition
+      - If it is in heat (automated or manual) and one or more drafting slots fall into the optimal insemination window. 
+        The optimal insemination window is 12 hours long, so it is possible that multiple drafting slots apply. Whether
+        to add the animal to one or all of these drafting slots is determined by the farm configuration above. 
+        Note that it is added only to future draft list and not to historical ones?TBC.
+      - If it is in heat (automated or manual) and no drafting slot falls into the optimal insemination window but into 
+      the insemination window, then it is added to the first (only) drafting slot in the insemination window, regardless
+      of the farm configuration above. Note that it is added only to future draft list and not to historical ones?TBC.
+      - If it has a health issue and one or more drafting slots fall into the health issue window.
+        The health issue window is 24 hours long (ie, issue start + 24 hours), so it is possible that multiple drafting
+        slots apply. In this case, it is added to all future draft list and not to historical ones that apply?TBC.
+    - Manual addition
+      - By manually adding to a draft list for any reason (ex General or Device).
+      - Only admins (regular or super) and members can add animals into the draft list.
+      - No animals can be added to historical draft list.
+    - Any animal in the draft list can be removed by only admins and members.
+      - No animals can be removed from historical draft list.
+    - Note that there is no automated logic for the reasons Device or General.
+
+B. Farm has no drafters
+   If farm has no drafters, DML still auto generates an inspection list of animals for each day?TBC.
+   Similarly, all users to a farm (admin, member, viewer) can view any inspection list.
+   An inspection list can be historical or future. By default, the next upcoming list is presented to the user.
+   Only admins (regular or super) and members can add animals to the inspection list?TBC.
+    - No animals can be added to historical inspection list.
+   Any animal in the inspection list can be removed by only admins and members.
+    - No animals can be removed from historical inspection list.
+
+C. Animal details
+   Animal details will show the drafting/inspection information of the animal.
+
+
+Scenario Outline: No heat/health event is auto added to a historical draft slot
+
+Rule: Farm allows animals into 1 drafting slot only
+Scenario Outline: A heat event is automatically added only into draft slot(s) that has a "Heat" reason
+Scenario Outline: A health event is automatically added only into draft slot(s) that has a "Health" reason
+Scenario Outline: Draft slot(s) falls into optimal insemination window only
+Scenario Outline: Draft slot(s) falls into insemination window only
+Scenario Outline: Draft slot(s) falls into optimal insemination window and insemination window
+Scenario: If farm allows animals into 1 drafting slot only, and multiple slots apply to the optimal insemination window, then animal is added only to earliest upcoming slot
+Scenario: If farm allows animals into multiple drafting slots, then A heat event is added only to 1st 
+
+Rule: Farm allows animals into multiple drafting slots
+
+Scenario: DML generates an inspection list if farm has no drafters
+
+
+
+
+   
+
+ 

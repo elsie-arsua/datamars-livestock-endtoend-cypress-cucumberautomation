@@ -1,0 +1,50 @@
+{
+    "env": {
+        "fusionAuthApplication": "https://account.livestock.datamars.com",
+        "monitoringWebsite": "https://monitoring.livestock.datamars.com",
+        "myAccountApplication": "https://myaccount.livestock.datamars.com",
+        "sso" : {
+            "url": "https://account.livestock.datamars.com/oauth2/authorize",
+            "responseType": "code",
+            "scope": "offline_access",
+            "clientId": "6320f73b-2794-40f1-8e53-0d163c42987d",
+            "tenantId": "d675d0dc-6035-4b20-ae45-50d216e414e4",
+            "timezone": "Pacific/Auckland",
+            "redirectUri": "https://monitoring.livestock.datamars.com/auth/outh-redirect"
+        },
+        "logout" : {
+            "url": "https://monitoring.livestock.datamars.com/auth/oauth-logout"
+        },
+        "superAdmin": {
+            "email": "lcd.datamars+1@gmail.com",
+            "password": "nzsaas123"
+        },
+        "superRead": {
+            "email": "lcd.datamars+2@gmail.com",
+            "password": "nzsaas123"
+        },
+        "userPassword": "test1234",
+        "regionLookup": {
+            "Auckland": 1671,
+            "Queensland": 112
+        },
+        "countryLookup": {
+            "New Zealand": "NZ",
+            "Australia": "AU"
+        },
+        "marketingUpdates": {
+            "no": false,
+            "yes": true
+        },
+        "userRoleToFarmUIToAPI": {
+            "Admin": "FARM_ADMIN",
+            "Member": "FARM_MEMBER",
+            "Viewer": "FARM_READ"
+        },
+        "userRoleToFarmAPIToUI": {
+            "FARM_ADMIN": "Admin",
+            "FARM_MEMBER": "Member",
+            "FARM_READ": "Viewer"
+        }
+    }
+}
